@@ -1,38 +1,34 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+    <title>MY Todo List APP test</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>My own Todo-list hosted on EC2 via Jenkins with CI/CD</h1>
+    <p>Here's the first change</p>
+    <ul>
+        <% todolist.forEach(function(todo, index) { %>
+        <li>
+            <a href="/todo/delete/<%= index %>">✘</a>
+            <a href="/todo/<%= index %>">✎</a>
+            <%- todo %>
+        </li>
+        <% }); %>
+    </ul>
 
-    <head>
-        <title>MY Todo List APP test</title>
-        <style>
-            a {
-                text-decoration: none;
-                color: black;
-            }
-
-        </style>
-    </head>
-
-    <body>
-        <h1>My own Todo-list hosted on EC2 via jenkins with CI/CD</h1>
-          <p> Heres first change</p>
-        <ul>
-            <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>">✘</a>
-                <a href="/todo/<%= index %>">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
-        </ul>
-
-        <form action="/todo/add/" method="post">
-            <p>
-                <label for="newtodo">What shoud I do?</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
-            </p>
-        </form>
-    </body>
-
+    <form action="/todo/add/" method="post">
+        <p>
+            <label for="newtodo">What should I do?</label>
+            <input type="text" name="newtodo" id="newtodo" autofocus />
+            <input type="submit" value="Add" />
+        </p>
+    </form>
+</body>
 </html>
+
