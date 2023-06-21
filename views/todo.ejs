@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Todo List APP </title>
+    <title>My Todo List APP</title>
     <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            color: #333333;
+        }
+
+        h1 {
+            color: #006699;
+        }
+
+        p {
+            color: #666666;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
         a {
             text-decoration: none;
-            color: black;
+            color: #333333;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            color: #006699;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #006699;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004466;
         }
     </style>
 </head>
@@ -25,10 +76,9 @@
     <form action="/todo/add/" method="post">
         <p>
             <label for="newtodo">What should I do?</label>
-            <input type="text" name="newtodo" id="newtodo" autofocus />
-            <input type="submit" value="Add" />
+            <input type="text" name="newtodo" id="newtodo" autofocus>
+            <input type="submit" value="Add">
         </p>
     </form>
 </body>
 </html>
-
